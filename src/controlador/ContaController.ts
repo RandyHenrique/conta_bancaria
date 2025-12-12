@@ -87,7 +87,24 @@ export class ContaController implements ContaRepository {
     }
 
     transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
-        throw new Error("Method not implemented.");
+        
+        let contaOrigem = this.buscarNoArray(numeroOrigem);
+        let contaDestino = this.buscarNoArray(numeroDestino);
+
+        if (contaOrigem != null && contaDestino != null) {
+            if (contaOrigem.sacar(valor) == true) {
+                contaDestino.depositar(valor);
+                console.log(colors.fg.green, "\nA Transferência da conta numero" 
+                    + numeroOrigem + "para a conta numero" + numeroDestino +
+                    "foi efetuada com sucesso", colors.reset);
+            } else {
+                console.log(colors.fg.red, "\nSaldo insuficiente na conta número: " 
+                    + numeroOrigem, colors.reset);
+            }
+        }else {
+            console.log(colors.fg.red, "\nA conta numero: "+numeroOrigem+
+                " e/ou a conta numero: "+numeroDestino+" não foram encontradas", colors.reset);
+        }
     }
     
     gerarNumero(): number {

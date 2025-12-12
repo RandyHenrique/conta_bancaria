@@ -182,6 +182,17 @@ export function main() {
                 console.log(colors.fg.whitestrong, 
                     "\n\nTransferência entre Contas\n\n", colors.reset);
 
+                console.log("Digite o número da Conta de Origem: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o número da Conta de Destino: ");
+                numeroDestino = readlinesync.questionInt("");
+
+                console.log("Digite o valor da transferência(R$): ");
+                valor = readlinesync.questionFloat("");
+
+                contas.transferir(numero, numeroDestino, valor);
+
                 keyPress()
                 break;
             default:
