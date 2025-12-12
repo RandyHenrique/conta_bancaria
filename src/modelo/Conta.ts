@@ -1,3 +1,5 @@
+import { colors } from "../util/Colors";
+
 export abstract class Conta {
 
     private _numero: number;
