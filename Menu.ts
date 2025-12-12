@@ -167,6 +167,15 @@ export function main() {
                 console.log(colors.fg.whitestrong, 
                     "\n\nDepósito\n\n", colors.reset);
 
+
+                console.log("Digite o número da Conta: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o valor do depósito(R$): ");
+                valor = readlinesync.questionFloat("");
+
+                contas.depositar(numero, valor);
+
                 keyPress()
                 break;
             case 8:

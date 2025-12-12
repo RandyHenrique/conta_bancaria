@@ -72,7 +72,18 @@ export class ContaController implements ContaRepository {
     }
 
     depositar(numero: number, valor: number): void {
-        throw new Error("Method not implemented.");
+
+        let buscaConta = this.buscarNoArray(numero);
+
+        if (buscaConta != null) {
+            buscaConta.depositar(valor);
+            console.log(colors.fg.green, "\nO Depósito na conta numero" + numero +
+                "foi efetuado com sucesso", colors.reset);
+        } else {
+            console.log(colors.fg.red, "\nA Conta número: " 
+                + numero + "Não foi encontrada", colors.reset);
+        }
+        
     }
 
     transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
