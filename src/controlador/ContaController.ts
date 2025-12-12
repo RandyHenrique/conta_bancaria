@@ -25,8 +25,8 @@ export class ContaController implements ContaRepository {
 
     cadastrar(conta: Conta): void {
         this.listaContas.push(conta);
-        console.log(colors.fg.green,"/nA Conta número:"+ conta.numero + "foi criada com sucesso!", colors.reset);
-        throw new Error("Method not implemented.");
+        console.log(colors.fg.green,"/nA Conta número:"+ conta.numero + 
+            "foi criada com sucesso!", colors.reset);
     }
 
     atualizar(conta: Conta): void {
