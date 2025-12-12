@@ -6,7 +6,7 @@ import { ContaPoupanca } from "./src/modelo/ContaPoupanca";
 
 export function main() {
     let contas: ContaController = new ContaController();
-    let opcao, numero, agencia, saldo, limite, titular, tipo, aniversario: number;
+    let opcao, numero, agencia, saldo, limite, titular, tipo, aniversario: number, valor, numeroDestino: number;
     const tiposContas = ["Conta Corrente", "Conta Poupança"];
 
     
@@ -151,8 +151,15 @@ export function main() {
                 keyPress()
                 break;
             case 6:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nSaque\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nSaque\n\n", colors.reset);
+
+                console.log("Digite o número da Conta: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o valor do saque(R$): ");
+                valor = readlinesync.questionFloat("");
+
+                contas.sacar(numero, valor);
 
                 keyPress()
                 break;
