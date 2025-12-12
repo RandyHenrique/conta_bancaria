@@ -66,14 +66,14 @@ export function main() {
                         console.log("Digite o limite da conta(R$): ");
                         limite = readlinesync.questionFloat("");
                         contas.cadastrar( new ContaCorrente(
-                            contas.gerarNumeroConta(),
+                            contas.gerarNumero(),
                             agencia, tipo, titular, saldo, limite));
                         break;
                     case 2:
                         console.log("Digite o dia do aniversário da conta poupança: ");
                         aniversario = readlinesync.questionInt("");
                         contas.cadastrar( new ContaPoupanca(
-                            contas.gerarNumeroConta(),
+                            contas.gerarNumero(),
                             agencia, tipo, titular, saldo, aniversario));
                         break;
                 }

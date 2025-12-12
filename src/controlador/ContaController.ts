@@ -48,6 +48,10 @@ export class ContaController implements ContaRepository {
     transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
         throw new Error("Method not implemented.");
     }
+    
+    gerarNumero(): number {
+       return ++ this.numero;
+    }
 
     public buscarNoArray(numero: number): Conta | null {
         for (let conta of this.listaContas) {
